@@ -9,8 +9,9 @@ struct App {
 
 fn main() {
 	mut app := App{}
-	// app.serve_static('/docs', '.src/assets/docs')
+	// server swagger statics
 	app.host_mount_static_folder_at('localhost', './src/assets/docs', '/docs')
+	// start server on port
 	vweb.run(app, 8080)
 }
 

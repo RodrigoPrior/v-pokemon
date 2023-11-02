@@ -7,11 +7,11 @@ servers:
   - url: http://localhost:8080/v1
     description: Local development server
 paths:
-  /pokemon/{pokemon_name}:
+  /pokemon/{name}:
     get:
       summary: Returns a pokemon by Name or ID.
       parameters:
-        - name: pokemon_name
+        - name: name
           in: path
           required: true
           description: Pokemon Name or ID.
