@@ -1,0 +1,23 @@
+openapi: 3.0.0
+info:
+  title: Sample API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 0.1.9
+servers:
+  - url: http://localhost:8080/v1
+    description: Local development server
+paths:
+  /pokemon/{pokemon_name}:
+    get:
+      summary: Returns a pokemon by Name or ID.
+      parameters:
+        - name: pokemon_name
+          in: path
+          required: true
+          description: Pokemon Name or ID.
+          schema:
+            type : string
+            minimum: 1
+      responses: 
+        '200':
+          description: OK

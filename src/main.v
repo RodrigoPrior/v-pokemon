@@ -25,7 +25,7 @@ pub fn (mut app App) content() vweb.Result {
 	return app.html(content)
 }
 
-['/pokemon/:name'; get]
+['/v1/pokemon/:name'; get]
 fn (mut app App) get_pokemon(name string) vweb.Result {
 	// get the right pokemon
 	url := 'https://pokeapi.co/api/v2/pokemon/${name}'
