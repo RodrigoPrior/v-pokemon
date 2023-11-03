@@ -16,7 +16,7 @@ fn main() {
 }
 
 pub fn (mut app App) index() vweb.Result {
-	return app.text('Hello world from v!')
+	return app.text('Hello v-pokemon!')
 }
 
 ['/docs']
