@@ -10,6 +10,12 @@ Simple [v lang](https://vlang.io/) test API interface to [Pokéapi](https://poke
     $ v watch run src
 ```
 
+# Tests
+
+```bash
+    $ v test src
+```
+
 # Compile
 
 ```bash
@@ -22,7 +28,7 @@ Obs.: statics from `/docs` are not compiled toguether with the final binary.
 # TODO
 
 - [ ] Makefile?
-- [ ] Tests
+- [x] Tests
 
 # References
 
@@ -30,5 +36,3 @@ Obs.: statics from `/docs` are not compiled toguether with the final binary.
 
 - https://blog.vlang.io/elevate-your-v-project-with-unit-tests/
 - https://github.com/vlang/v/blob/master/vlib/vweb/tests/vweb_test.v
-
-
