@@ -18,3 +18,7 @@ Simple [v lang](https://vlang.io/) test API interface to [Pokéapi](https://poke
 ```
 
 Obs.: statics from `/docs` are not compiled toguether with the final binary.
+
+# TODO
+
+- [ ] Makefile
