@@ -87,3 +87,9 @@ fn test_http_client_404() {
 		assert res.body.starts_with('404')
 	}
 }
+
+fn test_http_client_real_pokemon() {
+	x := http.get('http://${localserver}/v1/pokemon/ditto') or { panic(err) }
+	assert x.status() == http.Status.ok
+	assert x.header.get(.content_type)! == 'application/json'
+}
