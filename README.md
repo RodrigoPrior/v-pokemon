@@ -21,4 +21,14 @@ Obs.: statics from `/docs` are not compiled toguether with the final binary.
 
 # TODO
 
-- [ ] Makefile
+- [ ] Makefile?
+- [ ] Tests
+
+# References
+
+## Tests
+
+- https://blog.vlang.io/elevate-your-v-project-with-unit-tests/
+- https://github.com/vlang/v/blob/master/vlib/vweb/tests/vweb_test.v
+
+
