@@ -31,6 +31,7 @@ fn (mut app App) get_pokemon(name string) vweb.Result {
 	// get the right pokemon
 	url := 'https://pokeapi.co/api/v2/pokemon/${name}'
 	response := http.get_text(url)
-	app.add_header('Content-Type', 'application/json')
-	return app.text(response)
+	// payload already in json format, send directly and set content-type
+	app.set_content_type('application/json')
+	return app.ok(response)
 }
