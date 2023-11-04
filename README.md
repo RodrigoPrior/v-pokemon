@@ -28,6 +28,7 @@ Obs.: statics from `/docs` are not compiled toguether with the final binary.
 # TODO
 
 - [ ] Makefile?
+- [ ] Pipelines
 - [x] Tests
 
 # References
