@@ -93,3 +93,9 @@ fn test_http_client_real_pokemon() {
 	assert x.status() == http.Status.ok
 	assert x.header.get(.content_type)! == 'application/json'
 }
+
+fn test_http_client_fake_pokemon() {
+	x := http.get('http://${localserver}/v1/pokemon/lalala') or { panic(err) }
+	assert x.status() == http.Status.not_found
+	assert x.header.get(.content_type)! == 'text/plain'
+}

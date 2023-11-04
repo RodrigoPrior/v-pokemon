@@ -16,7 +16,7 @@ fn main() {
 	// server swagger statics
 	app.host_mount_static_folder_at('localhost', './src/assets/docs', '/docs')
 	// start server on port
-	logger.simple('debug', '[+] mensagem de amor')
+	logger.simple('debug', '[+] start server with debug message')
 	vweb.run(app, 8080)
 }
 
@@ -36,8 +36,15 @@ fn (mut app App) get_pokemon(name string) vweb.Result {
 	// get the right pokemon
 	url := 'https://pokeapi.co/api/v2/pokemon/${name}'
 	res := http.get(url) or { panic(err) }
-	// payload already in json format, send directly and set content-type
-	app.set_content_type('application/json')
 	logger.simple('info', '${res.status_code} - ${url} - ${res.status_msg}')
-	return app.ok(res.body)
+
+	match res.body {
+		'Not Found' {
+			return app.not_found()
+		}
+		else {
+			app.set_content_type('application/json')
+			return app.ok(res.body)
+		}
+	}
 }
