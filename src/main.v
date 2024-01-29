@@ -24,14 +24,14 @@ pub fn (mut app App) index() vweb.Result {
 	return app.text('Hello v-pokemon!')
 }
 
-['/docs']
+@['/docs']
 pub fn (mut app App) content() vweb.Result {
 	// call root swagger index
 	content := $tmpl('assets/docs/index.html')
 	return app.html(content)
 }
 
-['/v1/pokemon/:name'; get]
+@['/v1/pokemon/:name'; get]
 fn (mut app App) get_pokemon(name string) vweb.Result {
 	// get the right pokemon
 	url := 'https://pokeapi.co/api/v2/pokemon/${name}'
